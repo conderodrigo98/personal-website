@@ -1,0 +1,47 @@
+<svg width="100%" height="100%" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="yellowGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FFE27A"/>
+      <stop offset="100%" stop-color="#fdca40"/>
+    </linearGradient>
+
+    <linearGradient id="redGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FF8A73"/>
+      <stop offset="100%" stop-color="#F95738"/>
+    </linearGradient>
+
+    <linearGradient id="blueGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#5A9CC5"/>
+      <stop offset="100%" stop-color="#3a7ca5"/>
+    </linearGradient>
+
+    <linearGradient id="greenGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#A4D1A8"/>
+      <stop offset="100%" stop-color="#7FB285"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Yellow -->
+  <rect x="0" y="0" width="1" height="16" fill="url(#yellowGrad)"/>
+  <rect x="1" y="0" width="1" height="16" fill="url(#yellowGrad)"/>
+  <rect x="2" y="0" width="1" height="16" fill="url(#yellowGrad)"/>
+  <rect x="3" y="0" width="1" height="16" fill="url(#yellowGrad)"/>
+
+  <!-- Red -->
+  <rect x="4" y="0" width="1" height="16" fill="url(#redGrad)"/>
+  <rect x="5" y="0" width="1" height="16" fill="url(#redGrad)"/>
+  <rect x="6" y="0" width="1" height="16" fill="url(#redGrad)"/>
+  <rect x="7" y="0" width="1" height="16" fill="url(#redGrad)"/>
+
+  <!-- Blue -->
+  <rect x="8" y="0" width="1" height="16" fill="url(#blueGrad)"/>
+  <rect x="9" y="0" width="1" height="16" fill="url(#blueGrad)"/>
+  <rect x="10" y="0" width="1" height="16" fill="url(#blueGrad)"/>
+  <rect x="11" y="0" width="1" height="16" fill="url(#blueGrad)"/>
+
+  <!-- Green -->
+  <rect x="12" y="0" width="1" height="16" fill="url(#greenGrad)"/>
+  <rect x="13" y="0" width="1" height="16" fill="url(#greenGrad)"/>
+  <rect x="14" y="0" width="1" height="16" fill="url(#greenGrad)"/>
+  <rect x="15" y="0" width="1" height="16" fill="url(#greenGrad)"/>
+</svg>
