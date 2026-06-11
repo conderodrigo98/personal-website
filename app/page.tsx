@@ -1,6 +1,7 @@
 import Navbar from "./components/navbar";
 import Home from "./components/home";
 import Me from "./components/me";
+import MyJourney from "./components/my-journey";
 
 export default function Page() {
   return (
@@ -9,6 +10,7 @@ export default function Page() {
       <main className="flex flex-1 w-full flex-col items-center justify-between py-4 px-4 sm:items-start">
         <Home />
         <Me />
+        <MyJourney />
       </main>
     </div>
   );
