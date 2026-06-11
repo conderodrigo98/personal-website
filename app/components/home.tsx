@@ -3,7 +3,7 @@ import mutedBgSvg from "../../public/bg-muted.svg";
 
 export default function Home() {
   return (
-    <div className="flex flex-1 flex-col self-stretch justify-end leading-none">
+    <div className="flex min-h-screen flex-col self-stretch justify-end leading-none">
       <div
         className="flex flex-1 flex-col self-stretch justify-end leading-none bg-cover bg-center bg-no-repeat "
         style={{ backgroundImage: `url(${mutedBgSvg.src})` }}
