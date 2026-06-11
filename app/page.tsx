@@ -2,6 +2,7 @@ import Navbar from "./components/navbar";
 import Home from "./components/home";
 import Me from "./components/me";
 import MyJourney from "./components/my-journey";
+import Contact from "./components/contact";
 
 export default function Page() {
   return (
@@ -11,6 +12,7 @@ export default function Page() {
         <Home />
         <Me />
         <MyJourney />
+        <Contact />
       </main>
     </div>
   );

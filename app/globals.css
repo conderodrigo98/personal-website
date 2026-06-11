@@ -30,3 +30,25 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+@keyframes brand-rotate {
+  0% {
+    background-color: var(--brand-blue);
+  }
+  25% {
+    background-color: var(--brand-yellow);
+  }
+  50% {
+    background-color: var(--brand-red);
+  }
+  75% {
+    background-color: var(--brand-green);
+  }
+  100% {
+    background-color: var(--brand-blue);
+  }
+}
+
+.brand-rotate-button {
+  animation: brand-rotate 5s linear infinite;
+}
