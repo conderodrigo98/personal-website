@@ -3,7 +3,10 @@ import mutedBgSvg from "../../public/bg-muted.svg";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen flex-col self-stretch justify-end leading-none">
+    <div
+      id="home"
+      className="flex min-h-screen flex-col self-stretch justify-end leading-none"
+    >
       <div
         className="flex flex-1 flex-col self-stretch justify-end leading-none bg-cover bg-center bg-no-repeat "
         style={{ backgroundImage: `url(${mutedBgSvg.src})` }}
@@ -15,7 +18,7 @@ export default function Home() {
       <h1
         aria-label="RODRIGO CONDE"
         className="bg-cover bg-center bg-no-repeat text-[16vw] font-bold tracking-[-0.09em] [font-stretch:75%]"
-        style={{ backgroundImage: `url(${bgSvg.src})` }}
+        style={{ backgroundImage: `url(${bgSvg.src})`, fontFamily: 'Arial' }}
       >
         RODRIGO CONDE
       </h1>
