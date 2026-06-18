@@ -1,8 +1,8 @@
 const meCards = [
-  { title: "Fact 01", body: "Replace this with a concise fact about you.", color: "var(--brand-yellow)" },
-  { title: "Fact 02", body: "Replace this with a concise fact about you.", color: "var(--brand-red)" },
-  { title: "Fact 03", body: "Replace this with a concise fact about you.", color: "var(--brand-blue)" },
-  { title: "Fact 04", body: "Replace this with a concise fact about you.", color: "var(--brand-green)" },
+  { title: "Prepared", body: "I have a bachelors degree in Computer Engineering and multiple Microsoft and SCRUM certifications.", color: "var(--brand-yellow)" },
+  { title: "Up to date", body: "I'm knowledgeable of current AI and cloud technologies.", color: "var(--brand-red)" },
+  { title: "Best of both worlds", body: "I have a hybrid profile: hands-on leader & business atuned engineer.", color: "var(--brand-blue)" },
+  { title: "A bit of everything", body: "I have experience leading, analysing, designing, building, and deploying complex software systems in critical environments.", color: "var(--brand-green)" },
 ];
 
 export default function Me() {

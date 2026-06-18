@@ -1,6 +1,6 @@
 const journeyStats = [
-  { value: "7+", label: "Years exploring ideas in production." },
-  { value: "4", label: "Placeholder chapters across different teams." },
+  { value: "7+", label: "Years in the industry." },
+  { value: "15+", label: "Completed projects." },
   { value: "10+", label: "Tools, stacks, and systems still in rotation." },
   { value: "Many", label: "Problems untangled one release at a time." },
 ];
