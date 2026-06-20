@@ -17,15 +17,9 @@ export default function Navbar() {
           <a
             href="#home"
             aria-label="Home"
-            className="flex h-10 w-10 items-center justify-center rounded-full transition-colors duration-150 hover:bg-white/10 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white/80"
+            className="flex h-10 w-10 items-center justify-center rounded-full text-xl font-black transition-colors duration-150 hover:bg-white/10 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white/80"
           >
-            <Image
-              src="/home-placeholder.svg"
-              alt=""
-              width={18}
-              height={18}
-              aria-hidden="true"
-            />
+            RC
           </a>
         </li>
         {navItems.map((item) => (
