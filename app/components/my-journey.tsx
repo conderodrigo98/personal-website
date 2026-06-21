@@ -110,10 +110,10 @@ export default function MyJourney() {
       <div className="flex w-full max-w-6xl flex-col gap-14 sm:gap-18">
         <div className="flex flex-col gap-8">
           <div className="max-w-3xl">
-            <p className="text-sm font-semibold uppercase tracking-[0.22em] text-[var(--brand-blue)]">
+            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-[var(--foreground-muted)]">
               My Journey
             </p>
-            <h2 className="mt-3 text-5xl leading-[0.92] tracking-[-0.06em] sm:text-6xl lg:text-7xl">
+            <h2 className="mt-2 text-4xl font-bold tracking-[-0.04em] sm:text-5xl">
               An adventure of growth & tech
             </h2>
             <p className="mt-6 max-w-2xl text-lg leading-8 text-[var(--foreground-muted)] sm:text-xl">
