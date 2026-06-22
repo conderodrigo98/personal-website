@@ -19,7 +19,13 @@ export default function Navbar() {
             aria-label="Home"
             className="flex h-10 w-10 items-center justify-center rounded-full text-xl font-black transition-colors duration-150 hover:bg-white/10 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white/80"
           >
-            RC
+            <Image
+              src="/logo-dark.svg"
+              alt=""
+              width={25}
+              height={25}
+              aria-hidden="true"
+            />
           </a>
         </li>
         {navItems.map((item) => (

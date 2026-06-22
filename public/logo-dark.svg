@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" xmlns:bx="https://boxy-svg.com">
+  <circle cx="10" cy="10" r="5" fill="#fdca40" style="stroke-width: 1;"></circle>
+  <circle cx="10" cy="20" r="5" fill="#F95738" style="stroke-width: 1;"></circle>
+  <circle cx="10" cy="30" r="5" fill="#3a7ca5" style="stroke-width: 1;"></circle>
+  <circle cx="10" cy="40" r="5" fill="#7FB285" style="stroke-width: 1;"></circle>
+  <line x1="10" y1="10" x2="10" y2="45" stroke="#E9E3E6" stroke-width="2" stroke-linecap="round" style="stroke-width: 2;"></line>
+  <path style="fill: none; stroke: #E9E3E6; stroke-width: 2;" d="M 10 10 C 45 10 45 20 10 20"></path>
+  <path style="fill: none; stroke: #E9E3E6; stroke-width: 2;" d="M 45 47.5 C 45 40 37.656 23.34 10 20"></path>
+  <defs>
+    <bx:grid x="0" y="0" width="5" height="5" divisions="1"></bx:grid>
+  </defs>
+</svg>
