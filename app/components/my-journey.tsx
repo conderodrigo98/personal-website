@@ -1,8 +1,8 @@
 const journeyStats = [
   { value: "7+", label: "Years in the industry" },
   { value: "20+", label: "Completed projects" },
-  { value: "3", label: "Professional certifications" },
-  { value: "7+", label: "Years of building software" },
+  { value: "15+", label: "Mentored engineers" },
+  { value: "Many", label: "Problems solved" },
 ];
 
 const accentColors = [
@@ -29,8 +29,7 @@ const journeyTimeline = [
     year: "1998",
     title: "All started here",
     subtitle: "Montevideo, Uruguay",
-    description:
-      "A random day of September, I was born.",
+    description: "A random day of September 1998, I was born.",
   },
   {
     year: "2017",
@@ -41,10 +40,10 @@ const journeyTimeline = [
   },
   {
     year: "2019",
-    title: "Built \"A Quién Voto?\"",
+    title: 'Built "A Quién Voto?"',
     subtitle: "Personal Project",
     description:
-      "Created a web platform to help Uruguayan voters compare political candidates and proposals during the national elections.",
+      "Developed a machine learning based web app that predicted what people would vote in the 2020 Uruguayan presidential elections. The app got more than 100k visits and national media coverage.",
   },
   {
     year: "2019",
@@ -58,14 +57,14 @@ const journeyTimeline = [
     title: "Completed Computer Engineering Degree",
     subtitle: "Universidad de la República",
     description:
-      "Graduated after combining full-time professional experience with university studies.",
+      "Graduated after combining full-time professional experience with university studies. My last years focused on language processing, machine learning and mathematical modelling.",
   },
   {
     year: "2023",
     title: "Published a Research Paper",
     subtitle: "AIMS Journal of Dynamics and Games",
     description:
-      "Published research work focused on software engineering and computer science topics.",
+      "Published a research paper on mathematical modelling and computational simulation of investment decisions, applied to agribusiness. The work was published in a journal of the American Institute of Mathematical Sciences.",
   },
   {
     year: "2023",
@@ -102,6 +101,14 @@ const journeyTimeline = [
 }));
 
 export default function MyJourney() {
+  const birthDate = new Date(1998, 8, 13);
+  const today = new Date();
+
+  const msPerDay = 1000 * 60 * 60 * 24;
+  const daysPassed = Math.floor(
+    (today.getTime() - birthDate.getTime()) / msPerDay,
+  );
+
   return (
     <section
       id="my-journey"
@@ -117,7 +124,9 @@ export default function MyJourney() {
               An adventure of growth & tech
             </h2>
             <p className="mt-6 max-w-2xl text-lg leading-8 text-[var(--foreground-muted)] sm:text-xl">
-              After 9855 days, i have gone through challenges, learning, some tight spots and some big wins, but i have the same willingness and more power than ever.
+              After {daysPassed} days, I have gone through challenges, learning, some
+              tight spots and some big wins, but i have the same willingness and
+              more power than ever.
             </p>
           </div>
         </div>
@@ -140,8 +149,9 @@ export default function MyJourney() {
                   />
 
                   <div
-                    className={`lg:row-start-1 ${isRight ? "lg:col-start-2" : "lg:col-start-1"
-                      }`}
+                    className={`lg:row-start-1 ${
+                      isRight ? "lg:col-start-2" : "lg:col-start-1"
+                    }`}
                   >
                     <div
                       tabIndex={0}
@@ -153,12 +163,14 @@ export default function MyJourney() {
                     >
                       <div className="flex flex-col gap-3">
                         <div
-                          className={`flex items-start justify-between gap-4 ${isRight ? "" : "flex-row-reverse"
-                            }`}
+                          className={`flex items-start justify-between gap-4 ${
+                            isRight ? "" : "flex-row-reverse"
+                          }`}
                         >
                           <div
-                            className={`min-w-0 ${isRight ? "text-left" : "text-right"
-                              }`}
+                            className={`min-w-0 ${
+                              isRight ? "text-left" : "text-right"
+                            }`}
                           >
                             <span
                               className="inline-flex rounded-full px-2.5 py-1 text-xs font-semibold leading-none text-[var(--background)]"
@@ -177,15 +189,17 @@ export default function MyJourney() {
                         </div>
 
                         <p
-                          className={`text-sm leading-5 text-[var(--foreground-muted)] sm:text-base ${isRight ? "text-left" : "text-right"
-                            }`}
+                          className={`text-sm leading-5 text-[var(--foreground-muted)] sm:text-base ${
+                            isRight ? "text-left" : "text-right"
+                          }`}
                         >
                           {entry.subtitle}
                         </p>
 
                         <p
-                          className={`max-h-0 overflow-hidden text-sm leading-6 text-[var(--foreground)]/85 opacity-0 transition-all duration-300 group-hover:mt-1 group-hover:max-h-40 group-hover:opacity-100 group-focus:mt-1 group-focus:max-h-40 group-focus:opacity-100 sm:text-base ${isRight ? "text-left" : "text-right"
-                            }`}
+                          className={`max-h-0 overflow-hidden text-sm leading-6 text-[var(--foreground)]/85 opacity-0 transition-all duration-300 group-hover:mt-1 group-hover:max-h-40 group-hover:opacity-100 group-focus:mt-1 group-focus:max-h-40 group-focus:opacity-100 sm:text-base ${
+                            isRight ? "text-left" : "text-right"
+                          }`}
                         >
                           {entry.description}
                         </p>
@@ -216,7 +230,9 @@ export default function MyJourney() {
             >
               <p
                 className="text-center text-5xl font-semibold leading-none tracking-[-0.08em] sm:text-6xl"
-                style={{ color: accentColors[index % accentColors.length].color }}
+                style={{
+                  color: accentColors[index % accentColors.length].color,
+                }}
               >
                 {stat.value}
               </p>
