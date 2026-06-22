@@ -17,7 +17,7 @@ export default function Me() {
             Me
           </p>
           <h2 className="mt-2 text-4xl font-bold tracking-[-0.04em] sm:text-5xl">
-            Hi there! Here's a bit about me:
+            Hi there! Here&apos;s a bit about me:
           </h2>
         </div>
 
