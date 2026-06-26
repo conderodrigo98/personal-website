@@ -15,7 +15,7 @@ export default function Contact() {
         </div>
 
         <a
-          href="mailto:hello@example.com"
+          href="mailto:conderodrigo98@gmail.com"
           className="brand-rotate-button inline-flex min-h-16 items-center justify-center rounded-full px-8 py-4 text-lg font-bold text-[var(--background)] shadow-[0_20px_60px_rgba(25,25,25,0.18)] transition-transform duration-200 hover:scale-[1.02] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--foreground)] sm:min-h-20 sm:px-12 sm:text-2xl"
         >
           CLICK HERE
