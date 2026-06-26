@@ -1,5 +1,6 @@
 import bgSvg from "../../public/bg.svg";
 import mutedBgSvg from "../../public/bg-muted.svg";
+import HomeTypingLine from "./home-typing-line";
 
 export default function Home() {
   return (
@@ -12,7 +13,7 @@ export default function Home() {
         style={{ backgroundImage: `url(${mutedBgSvg.src})` }}
       >
         <p className="p-[1vw] text-[4vw] text-[var(--foreground-muted)]">
-          I craft apps that solve your problems.
+          <HomeTypingLine />
         </p>
       </div>
       <h1
