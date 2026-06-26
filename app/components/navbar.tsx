@@ -12,7 +12,7 @@ export default function Navbar() {
       aria-label="Main navigation"
       className="fixed top-4 left-1/2 z-50 w-auto max-w-[calc(100vw-2rem)] -translate-x-1/2"
     >
-      <ul className="flex items-center gap-1 rounded-full border border-black/10 bg-black/70 p-1 text-[0.8125rem] text-white shadow-[0_10px_30px_rgba(0,0,0,0.18)] backdrop-blur-md sm:gap-2 sm:text-sm">
+      <ul className="flex items-center gap-1 rounded-full border border-black/10 bg-black/70 p-1 text-[1.5rem] text-white shadow-[0_10px_30px_rgba(0,0,0,0.18)] backdrop-blur-md sm:gap-2 sm:text-sm">
         <li>
           <a
             href="#home"
@@ -22,8 +22,9 @@ export default function Navbar() {
             <Image
               src="/logo-dark.svg"
               alt=""
-              width={25}
-              height={25}
+              width={32}
+              height={32}
+              className="h-auto w-8 sm:w-[25px]"
               aria-hidden="true"
             />
           </a>
