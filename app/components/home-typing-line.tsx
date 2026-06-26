@@ -9,7 +9,7 @@ const typingSequence = [
   2000,
   'I craft apps that push your ideas forward.',
   2000,
-] as const;
+];
 
 export default function HomeTypingLine() {
   return (
