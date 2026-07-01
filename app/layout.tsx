@@ -7,7 +7,6 @@ const nunitoSans = Nunito_Sans({
   subsets: ["latin"],
 });
 
-
 export const metadata: Metadata = {
   title: "Rodrigo Conde | Software Engineer",
 };
@@ -18,10 +17,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={`${nunitoSans.variable} h-full antialiased`}
-    >
+    <html lang="en" className={`${nunitoSans.variable} h-full antialiased`}>
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
       <body className="min-h-full flex flex-col">{children}</body>
     </html>
   );
