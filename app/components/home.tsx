@@ -1,6 +1,7 @@
 import bgSvg from "../../public/bg.svg";
 import mutedBgSvg from "../../public/bg-muted.svg";
 import HomeTypingLine from "./home-typing-line";
+import HomeTitle from "./home-title";
 
 export default function Home() {
   return (
@@ -16,13 +17,11 @@ export default function Home() {
           <HomeTypingLine />
         </p>
       </div>
-      <h1
-        aria-label="RODRIGO CONDE" 
-        className="bg-cover bg-center bg-no-repeat pb-[27vw] sm:pb-0 text-[27vw] font-bold tracking-[-0.09em] [font-stretch:75%] sm:text-[16vw]"
-        style={{ backgroundImage: `url(${bgSvg.src})`, fontFamily: 'Arial' }}
-      >
-        RODRIGO CONDE
-      </h1>
+      <HomeTitle
+        backgroundImageUrl={bgSvg.src}
+        className="overflow-hidden bg-cover bg-center bg-no-repeat pb-[27vw] sm:pb-0"
+        text="RODRIGO CONDE"
+      />
     </div>
   );
 }
