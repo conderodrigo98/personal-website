@@ -19,7 +19,7 @@ export default function Home() {
       </div>
       <HomeTitle
         backgroundImageUrl={bgSvg.src}
-        className="overflow-hidden bg-cover bg-center bg-no-repeat pb-[27vw] sm:pb-0"
+        className="overflow-hidden bg-cover bg-center bg-no-repeat pb-[50%] sm:pb-0"
         text="RODRIGO CONDE"
       />
     </div>
