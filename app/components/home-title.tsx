@@ -1,5 +1,6 @@
 'use client'
 
+import type { Dispatch, SetStateAction } from "react";
 import { useEffect, useRef, useState } from "react";
 
 type HomeTitleProps = {
@@ -28,20 +29,53 @@ export default function HomeTitle({
   const headingRef = useRef<HTMLHeadingElement>(null);
   const desktopTextRef = useRef<HTMLSpanElement>(null);
   const mobileFirstLineRef = useRef<HTMLSpanElement>(null);
+  const mobileSecondLineRef = useRef<HTMLSpanElement>(null);
   const frameRef = useRef<number | null>(null);
-  const [fontSize, setFontSize] = useState(DEFAULT_FONT_SIZE_PX);
+  const [desktopFontSize, setDesktopFontSize] = useState(DEFAULT_FONT_SIZE_PX);
+  const [mobileFirstLineFontSize, setMobileFirstLineFontSize] = useState(
+    DEFAULT_FONT_SIZE_PX,
+  );
+  const [mobileSecondLineFontSize, setMobileSecondLineFontSize] = useState(
+    DEFAULT_FONT_SIZE_PX,
+  );
 
   useEffect(() => {
+    const getFittedFontSize = (
+      textElement: HTMLSpanElement,
+      availableWidth: number,
+    ) => {
+      const computedFontSize = Number.parseFloat(
+        window.getComputedStyle(textElement).fontSize,
+      );
+      const measuredWidth = textElement.getBoundingClientRect().width;
+
+      if (!computedFontSize || measuredWidth <= 0) {
+        return null;
+      }
+
+      return clampFontSize(computedFontSize * (availableWidth / measuredWidth));
+    };
+
+    const setMeasuredFontSize = (
+      setSize: Dispatch<SetStateAction<number>>,
+      nextFontSize: number | null,
+    ) => {
+      if (nextFontSize === null) {
+        return;
+      }
+
+      setSize((current) =>
+        Math.abs(current - nextFontSize) < 0.5 ? current : nextFontSize,
+      );
+    };
+
     const measure = () => {
       const heading = headingRef.current;
       const useDesktopLayout = window.matchMedia(
         DESKTOP_BREAKPOINT_QUERY,
       ).matches;
-      const textElement = useDesktopLayout
-        ? desktopTextRef.current
-        : mobileFirstLineRef.current;
 
-      if (!heading || !textElement) {
+      if (!heading) {
         return;
       }
 
@@ -51,21 +85,29 @@ export default function HomeTitle({
         return;
       }
 
-      const computedFontSize = Number.parseFloat(
-        window.getComputedStyle(textElement).fontSize,
-      );
-      const measuredWidth = textElement.getBoundingClientRect().width;
+      if (useDesktopLayout) {
+        if (!desktopTextRef.current) {
+          return;
+        }
 
-      if (!computedFontSize || measuredWidth <= 0) {
+        setMeasuredFontSize(
+          setDesktopFontSize,
+          getFittedFontSize(desktopTextRef.current, availableWidth),
+        );
         return;
       }
 
-      const nextFontSize = clampFontSize(
-        computedFontSize * (availableWidth / measuredWidth),
-      );
+      if (!mobileFirstLineRef.current || !mobileSecondLineRef.current) {
+        return;
+      }
 
-      setFontSize((current) =>
-        Math.abs(current - nextFontSize) < 0.5 ? current : nextFontSize,
+      setMeasuredFontSize(
+        setMobileFirstLineFontSize,
+        getFittedFontSize(mobileFirstLineRef.current, availableWidth),
+      );
+      setMeasuredFontSize(
+        setMobileSecondLineFontSize,
+        getFittedFontSize(mobileSecondLineRef.current, availableWidth),
       );
     };
 
@@ -114,7 +156,7 @@ export default function HomeTitle({
         ref={desktopTextRef}
         className="hidden whitespace-nowrap font-bold tracking-[-0.09em] [font-stretch:75%] sm:inline-block"
         style={{
-          fontSize: `${fontSize}px`,
+          fontSize: `${desktopFontSize}px`,
           paddingInlineEnd: `${TRAILING_GAP_CH}ch`,
         }}
       >
@@ -125,16 +167,17 @@ export default function HomeTitle({
           ref={mobileFirstLineRef}
           className="inline-block self-start whitespace-nowrap font-bold tracking-[-0.09em] [font-stretch:75%]"
           style={{
-            fontSize: `${fontSize}px`,
+            fontSize: `${mobileFirstLineFontSize}px`,
             paddingInlineEnd: `${TRAILING_GAP_CH}ch`,
           }}
         >
           {firstLine}
         </span>
         <span
+          ref={mobileSecondLineRef}
           className="inline-block self-start whitespace-nowrap font-bold tracking-[-0.09em] [font-stretch:75%]"
           style={{
-            fontSize: `${fontSize}px`,
+            fontSize: `${mobileSecondLineFontSize}px`,
             paddingInlineEnd: `${TRAILING_GAP_CH}ch`,
           }}
         >
