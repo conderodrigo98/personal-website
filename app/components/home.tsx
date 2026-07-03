@@ -13,13 +13,13 @@ export default function Home() {
         className="flex flex-1 flex-col self-stretch justify-end leading-none bg-cover bg-center bg-no-repeat "
         style={{ backgroundImage: `url(${mutedBgSvg.src})` }}
       >
-        <p className="min-h-[12vw] text-[5vw] text-[var(--foreground-muted)] sm:min-h-0 p-[1vw] sm:text-[4vw] leading-none">
+        <p className="min-h-[3.5rem] text-[1.5rem] text-[var(--foreground-muted)] sm:min-h-0 p-[1vw] sm:text-[4rem] leading-none">
           <HomeTypingLine />
         </p>
       </div>
       <HomeTitle
         backgroundImageUrl={bgSvg.src}
-        className="overflow-hidden bg-cover bg-center bg-no-repeat pb-[50%] sm:pb-0"
+        className="overflow-hidden bg-cover bg-center bg-no-repeat pb-[62%] sm:pb-0"
         text="RODRIGO CONDE"
       />
     </div>
