@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <div
       id="home"
-      className="flex min-h-[100svh] flex-col self-stretch justify-end leading-none pb-0"
+      className="relative flex min-h-[100svh] flex-col self-stretch justify-end leading-none pb-0"
     >
       <div
         className="flex flex-1 flex-col self-stretch justify-end leading-none bg-cover bg-center bg-no-repeat "
@@ -22,6 +22,24 @@ export default function Home() {
         className="overflow-hidden bg-cover bg-center bg-no-repeat pb-[62%] sm:pb-0"
         text="RODRIGO CONDE"
       />
+      <a
+        href="#me"
+        aria-label="Scroll down to the next section"
+        className="scroll-chevron absolute bottom-6 flex h-11 w-11 items-center justify-center rounded-full border border-black/20 bg-black/10 text-[var(--foreground)] backdrop-blur-[2px] sm:hidden"
+      >
+        <svg
+          aria-hidden="true"
+          viewBox="0 0 24 24"
+          className="h-6 w-6"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <path d="M6 9l6 6 6-6" />
+        </svg>
+      </a>
     </div>
   );
 }
