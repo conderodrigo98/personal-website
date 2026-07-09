@@ -25,7 +25,7 @@ export default function Home() {
       <a
         href="#me"
         aria-label="Scroll down to the next section"
-        className="scroll-chevron absolute bottom-6 flex h-11 w-11 items-center justify-center rounded-full border border-black/20 bg-black/10 text-[var(--foreground)] backdrop-blur-[2px] sm:hidden"
+        className="scroll-chevron absolute flex h-11 w-11 items-center justify-center rounded-full border border-[color:color-mix(in_srgb,var(--background)_38%,transparent)] bg-[color:color-mix(in_srgb,var(--foreground)_74%,transparent)] text-[var(--background)] shadow-[0_10px_24px_rgba(0,0,0,0.18)] backdrop-blur-[3px] sm:hidden"
       >
         <svg
           aria-hidden="true"
