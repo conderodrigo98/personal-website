@@ -29,6 +29,10 @@ body {
   font-family: var(--font-nunito-sans), Arial, Helvetica, sans-serif;
 }
 
+body.site-loading {
+  overflow: hidden;
+}
+
 @keyframes brand-rotate {
   0% {
     background-color: var(--brand-blue);
@@ -67,4 +71,56 @@ body {
 
 .brand-rotate-button {
   animation: brand-rotate 5s linear infinite;
+}
+
+.site-loader {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:
+    radial-gradient(circle at center, rgba(255, 255, 255, 0.55), transparent 42%),
+    var(--background);
+  opacity: 1;
+  transition:
+    opacity 420ms ease,
+    visibility 420ms ease;
+}
+
+.site-loader--exit {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.site-loader__logo {
+  width: clamp(5.5rem, 18vw, 10rem);
+  height: auto;
+  animation: site-loader-pulse 1.6s ease-in-out infinite;
+  will-change: transform, opacity;
+}
+
+@keyframes site-loader-pulse {
+  0%,
+  100% {
+    transform: scale(0.94);
+    opacity: 0.72;
+  }
+  50% {
+    transform: scale(1.04);
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-loader {
+    transition: none;
+  }
+
+  .site-loader__logo {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
 }

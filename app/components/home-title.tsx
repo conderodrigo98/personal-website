@@ -2,6 +2,7 @@
 
 import type { Dispatch, SetStateAction } from "react";
 import { useEffect, useRef, useState } from "react";
+import { useSiteLoader } from "./site-loader";
 
 type HomeTitleProps = {
   backgroundImageUrl: string;
@@ -24,6 +25,7 @@ export default function HomeTitle({
   className,
   text,
 }: HomeTitleProps) {
+  const siteLoader = useSiteLoader();
   const [firstLine, ...remainingWords] = text.split(" ");
   const secondLine = remainingWords.join(" ");
   const headingRef = useRef<HTMLHeadingElement>(null);
@@ -38,6 +40,7 @@ export default function HomeTitle({
   const [mobileSecondLineFontSize, setMobileSecondLineFontSize] = useState(
     DEFAULT_FONT_SIZE_PX,
   );
+  const hasReportedReadyRef = useRef(false);
 
   useEffect(() => {
     const getFittedFontSize = (
@@ -69,6 +72,15 @@ export default function HomeTitle({
       );
     };
 
+    const reportReady = () => {
+      if (hasReportedReadyRef.current) {
+        return;
+      }
+
+      hasReportedReadyRef.current = true;
+      siteLoader?.reportHeroReady();
+    };
+
     const measure = () => {
       const heading = headingRef.current;
       const useDesktopLayout = window.matchMedia(
@@ -94,6 +106,7 @@ export default function HomeTitle({
           setDesktopFontSize,
           getFittedFontSize(desktopTextRef.current, availableWidth),
         );
+        reportReady();
         return;
       }
 
@@ -109,6 +122,7 @@ export default function HomeTitle({
         setMobileSecondLineFontSize,
         getFittedFontSize(mobileSecondLineRef.current, availableWidth),
       );
+      reportReady();
     };
 
     const scheduleMeasure = () => {
@@ -140,7 +154,7 @@ export default function HomeTitle({
       resizeObserver.disconnect();
       window.removeEventListener("resize", scheduleMeasure);
     };
-  }, [text]);
+  }, [siteLoader, text]);
 
   return (
     <h1
