@@ -13,9 +13,15 @@ export default function Home() {
         className="flex flex-1 flex-col self-stretch justify-end leading-none bg-cover bg-center bg-no-repeat "
         style={{ backgroundImage: `url(${mutedBgSvg.src})` }}
       >
-        <p className="min-h-[3.5rem] text-[1.5rem] text-[var(--foreground-muted)] sm:min-h-0 p-[1vw] sm:text-[4rem] leading-none">
-          <HomeTypingLine />
-        </p>
+        <div className="p-[1vw] text-[var(--foreground-muted)]">
+          <p className="mb-5 text-[0.7rem] font-semibold uppercase leading-none tracking-[0.28em] sm:mb-8 sm:text-[1.3rem]">
+            <span aria-hidden="true">— </span>
+            Software Engineer <span aria-hidden="true">·</span> Tech Lead
+          </p>
+          <p className="min-h-[3.5rem] text-[1.5rem] leading-none sm:min-h-0 sm:text-[4rem]">
+            <HomeTypingLine />
+          </p>
+        </div>
       </div>
       <HomeTitle
         backgroundImageUrl={bgSvg.src}
