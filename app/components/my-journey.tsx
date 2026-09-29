@@ -98,7 +98,7 @@ const journeyTimeline = [
   ...entry,
   ...accentColors[index % accentColors.length],
   side: index % 2 === 1 ? ("right" as const) : ("left" as const),
-}));
+})).reverse();
 
 export default function MyJourney() {
   const birthDate = new Date(1998, 8, 13);
@@ -124,9 +124,8 @@ export default function MyJourney() {
               An adventure of growth & tech
             </h2>
             <p className="mt-6 max-w-2xl text-lg leading-8 text-[var(--foreground-muted)] sm:text-xl">
-              After {daysPassed} days, I have gone through challenges, learning, some
-              tight spots and some big wins, but i have the same willingness and
-              more power than ever.
+              After {daysPassed}{" "}days, countless lessons, a few tough moments, and some big
+              wins, I&apos;m just getting started.
             </p>
           </div>
         </div>
@@ -135,6 +134,13 @@ export default function MyJourney() {
           <div className="absolute top-0 bottom-0 left-4 w-px bg-black/10 sm:left-5 lg:left-1/2 lg:-translate-x-1/2" />
 
           <div className="flex flex-col gap-4 sm:gap-5">
+            <div className="relative flex justify-center pl-12 sm:pl-16 lg:pl-0">
+              <div className="absolute top-3 left-4 z-10 h-3 w-3 -translate-x-1/2 rounded-full border-[4px] border-[var(--background)] bg-[var(--foreground)] sm:left-5 lg:left-1/2" />
+              <p className="pt-8 text-center text-sm font-semibold uppercase tracking-[0.24em] text-[var(--foreground)]/65">
+                Today
+              </p>
+            </div>
+
             {journeyTimeline.map((entry, index) => {
               const isRight = entry.side === "right";
 
@@ -210,12 +216,6 @@ export default function MyJourney() {
               );
             })}
 
-            <div className="relative flex justify-center pl-12 sm:pl-16 lg:pl-0">
-              <div className="absolute top-3 left-4 z-10 h-3 w-3 -translate-x-1/2 rounded-full border-[4px] border-[var(--background)] bg-[var(--foreground)] sm:left-5 lg:left-1/2" />
-              <p className="pt-8 text-center text-sm font-semibold uppercase tracking-[0.24em] text-[var(--foreground)]/65">
-                Today
-              </p>
-            </div>
           </div>
         </div>
 
